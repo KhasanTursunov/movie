@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+
+@theme{
+    --color-primary: #C61F1F;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+#admin-sidebar .active{
+    background: dodgerblue;
+}
+
+#group-tab .active{
+    color: dodgerblue ;
+    text-decoration: underline;
+}
