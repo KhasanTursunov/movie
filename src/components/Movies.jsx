@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Movies = ({ data }) => {
   return (
-    <div className="grid grid-cols-5 gap-2.5">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 container max-w-7xl mx-auto p-6">
       {data?.results?.map((movie) => (
         <div
           className="border border-gray-300 dark:border-gray-800 dark:bg-gray-900"

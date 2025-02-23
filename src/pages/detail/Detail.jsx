@@ -15,30 +15,55 @@ const Detail = () => {
     }, [id])
     
   return (
-    <div className='container mx-auto'>
-        <div>
-            {
-                isLoading && <div className='text-center text-3xl'>Loading...</div>
-            }
-        </div>
-        <div className='h-[700px] bg-gray-400'>
-            <img className='w-full h-full object-cover' src={import.meta.env.VITE_IMAGE_URL + data?.backdrop_path} alt="" />
-        </div>
-        <div>
-            <h1 className='text-3xl'>{data?.title}</h1>
-        </div>
-        <div className='flex flex-wrap gap-1 mb-9'>
-            {
-                images?.backdrops?.slice(0, 10)?.map((image) => (
-                    <img key={image.file_path} className='w-[300px]' src={import.meta.env.VITE_IMAGE_URL + image.file_path} alt="" />
-                ))
-            }
-        </div>
-        <div>
-            <Movies data={similarData}/>
-        </div>
+    <div className="container max-w-7xl mx-auto p-6">
+      <div>
+        {isLoading && <div className="text-center text-3xl">Loading...</div>}
+      </div>
+
+      <div className="h-[600px] bg-gray-400 ">
+        <img
+          className="w-full h-full bg-center bg-cover object-cover"
+          src={import.meta.env.VITE_IMAGE_URL + data?.backdrop_path}
+          alt=""
+        />
+      </div>
+
+      <div className="flex flex-col gap-2.5 border rounded px-4 py-4 mt-10 mb-10">
+        <h1 className="text-3xl">
+          {" "}
+          <span className="text-red-500">Name: </span> {data?.title}
+        </h1>
+        <h1 className="text-3xl">
+          {" "}
+          <span className="text-red-500">Budget: </span>
+          {data?.budget}
+        </h1>
+        <h1 className="text-3xl">
+          {" "}
+          <span className="text-red-500">Realase Date: </span>{" "}
+          {data?.release_date}
+        </h1>
+        <h1 className="text-3xl">
+          {" "}
+          <span className="text-red-500">Vote Average: </span>
+          {data?.vote_average}
+        </h1>
+      </div>
+      <div className="eight_row flex flex-wrap gap-1  mb-9  ">
+        {images?.backdrops?.slice(0, 8)?.map((image) => (
+          <img
+            key={image.file_path}
+            className="w-[300px]"
+            src={import.meta.env.VITE_IMAGE_URL + image.file_path}
+            alt=""
+          />
+        ))}
+      </div>
+      <div>
+        <Movies data={similarData} />
+      </div>
     </div>
-  )
+  );
 }
 
 export default Detail

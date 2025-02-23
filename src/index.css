@@ -3,6 +3,7 @@
 
 @theme{
     --color-primary: #C61F1F;
+    --active-red: #C61F1F;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -14,4 +15,73 @@
 #group-tab .active{
     color: dodgerblue ;
     text-decoration: underline;
+}
+
+.navbar #active{
+    color: yellow;
+}
+
+
+
+/* Mobile Menu Hidden by Default */
+@media (max-width: 768px) {
+  .header_links {
+    top: 0;
+    left: -100%;
+    position: fixed;
+    width: 50%;
+    background-color: #111111;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: 0.5s linear;
+    z-index: 999;
+  }
+
+  .navbar_button {
+    display: block;
+  }
+
+  /* When checkbox is checked, show menu */
+  #check:checked ~ .header_links {
+    left: 0;
+  }
+}
+
+/* Hide menu button on larger screens */
+@media (min-width: 768px) {
+  .navbar_button {
+    display: none;
+  }
+
+  .header_links {
+    position: static;
+    flex-direction: row;
+    height: auto;
+    background: none;
+  }
+}
+
+
+@media(max-width:530px){
+    .dropdown{
+        display: none;
+    }
+    .header_wrapper{
+        padding: 15px;
+    }
+}
+@media(max-width:640px){
+
+    .header_wrapper{
+        padding: 15px;
+    }
+}
+
+@media(max-width: 956px){
+    .eight_row{
+        gap: 10px;
+        justify-content: center;
+    }
 }
