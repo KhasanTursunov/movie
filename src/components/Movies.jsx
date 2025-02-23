@@ -15,7 +15,7 @@ const Movies = ({ data }) => {
           >
             <img
               className="w-full h-full object-cover"
-              src={import.meta.env.VITE_IMAGE_URL + movie.poster_path}
+              src={"https://image.tmdb.org/t/p/original" + movie.poster_path}
               alt=""
             />
           </Link>

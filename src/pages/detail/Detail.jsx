@@ -23,7 +23,7 @@ const Detail = () => {
       <div className="h-[600px] bg-gray-400 ">
         <img
           className="w-full h-full bg-center bg-cover object-cover"
-          src={import.meta.env.VITE_IMAGE_URL + data?.backdrop_path}
+          src={"https://image.tmdb.org/t/p/original" + data?.backdrop_path}
           alt=""
         />
       </div>
@@ -54,7 +54,7 @@ const Detail = () => {
           <img
             key={image.file_path}
             className="w-[300px]"
-            src={import.meta.env.VITE_IMAGE_URL + image.file_path}
+            src={"https://image.tmdb.org/t/p/original" + image.file_path}
             alt=""
           />
         ))}
