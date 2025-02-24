@@ -43,7 +43,7 @@ const Header = () => {
   );
 
   return (
-    <div className=" bg-white dark:bg-[#111111]">
+    <div className=" bg-white dark:bg-[#111111] sticky top-0 left-0">
       <div className="header_wrapper max-w-7xl sm:px-6 lg:px-8 py-8 flex container mx-auto h-20 items-center gap-8 justify-between px-20 sticky top-0 left-0 z-99  ">
         <div className="navbar">
           <NavLink to={"/"} className="text-2xl font-medium flex-1 ">

@@ -19,6 +19,7 @@ const RouterMain = () => {
             <Route path='saved' element={<SuspenseContainer><Saved/></SuspenseContainer>}/>
             <Route path='movie/:id' element={<SuspenseContainer><Detail/></SuspenseContainer>}/>
         </Route>
+            <Route path='*' element={<SuspenseContainer><div><h2 className='text-8xl text-center'>404</h2></div></SuspenseContainer>}/>
     </Routes>
     </div>
   )
