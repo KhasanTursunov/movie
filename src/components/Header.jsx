@@ -81,7 +81,7 @@ const Header = () => {
 
           <div className="flex items-center gap-2">
             <img src={HomeImg4} alt="" />
-            <NavLink to={"/"}>Search</NavLink>
+            <NavLink to={"/search"}>Search</NavLink>
           </div>
         </div>
 
