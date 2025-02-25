@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { FaRegSun, FaRegMoon } from "react-icons/fa";
 import LogoFull from "../assets/svg/logo_full.svg";
 import HomeImg1 from "../assets/svg/h1.svg";
@@ -11,6 +10,7 @@ import { Dropdown, Menu, Button } from "antd";
 import { GlobalOutlined } from "@ant-design/icons";
 import { MdMenuOpen } from "react-icons/md";
 import { MdClose } from "react-icons/md"; 
+import { FaSun } from "react-icons/fa6";
 
 const Header = () => {
   const [dark, setDark] = useState("light");
@@ -96,7 +96,7 @@ const Header = () => {
           </Dropdown>
 
           <button className="cursor-pointer" onClick={handleDarkMode}>
-            {dark === "light" ? <FaRegMoon /> : <FaRegSun />}
+            {dark === "light" ? <FaRegMoon /> : <FaSun />}
           </button>
 
           <label htmlFor="check" className="navbar_button cursor-pointer">
