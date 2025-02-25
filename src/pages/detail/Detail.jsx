@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useGetSingleMovieImagesQuery, useGetSingleMovieQuery, useGetSingleMovieSimilarQuery } from '../../redux/api/movie.api'
 import { useParams } from 'react-router-dom'
-import Movies from '../../components/Movies'
+import Movies from '../../components/MoviesCom'
 
 const Detail = () => {
     const {id} = useParams()
