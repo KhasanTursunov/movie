@@ -54,12 +54,21 @@
   .navbar_button {
     display: none;
   }
+  
 
   .header_links {
     position: static;
     flex-direction: row;
     height: auto;
     background: none;
+  }
+
+ 
+}
+
+@media(max-width: 768px){
+    .navbar_links{
+    color: white;
   }
 }
 
@@ -84,4 +93,9 @@
         gap: 10px;
         justify-content: center;
     }
+}
+
+
+.navbar_links .active{
+  color: red;
 }

@@ -2,19 +2,18 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaRegSun, FaRegMoon } from "react-icons/fa";
 import LogoFull from "../assets/svg/logo_full.svg";
-import HomeImg1 from "../assets/svg/h1.svg";
-import HomeImg2 from "../assets/svg/h2.svg";
-import HomeImg5 from "../assets/svg/h5.svg";
-import HomeImg4 from "../assets/svg/h4.svg";
 import { Dropdown, Menu, Button } from "antd";
 import { GlobalOutlined } from "@ant-design/icons";
-import { MdMenuOpen } from "react-icons/md";
-import { MdClose } from "react-icons/md"; 
+import { MdClose, MdMenuOpen } from "react-icons/md";
 import { FaSun } from "react-icons/fa6";
+
+import { FaHome, FaBookmark } from "react-icons/fa";
+import { BiSolidCameraMovie } from "react-icons/bi";
+import { IoSearch } from "react-icons/io5";
 
 const Header = () => {
   const [dark, setDark] = useState("light");
-  const [menuOpen, setMenuOpen] = useState(false); 
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleDarkMode = () => {
     if (dark === "light") {
@@ -43,9 +42,9 @@ const Header = () => {
   );
 
   return (
-    <div className=" bg-white dark:bg-[#111111] sticky top-0 left-0">
+    <div className=" bg-white dark:bg-[#111111] sticky top-0 left-0 z-50">
       <div className="header_wrapper max-w-7xl sm:px-6 lg:px-8 py-8 flex container mx-auto h-20 items-center gap-8 justify-between px-20 sticky top-0 left-0 z-99  ">
-        <div className="navbar">
+        <div  className="navbar">
           <NavLink to={"/"} className="text-2xl font-medium flex-1 ">
             <img src={LogoFull} alt="" />
           </NavLink>
@@ -64,24 +63,35 @@ const Header = () => {
             menuOpen ? "left-0" : ""
           }`}
         >
-          <div className="flex items-center gap-2">
-            <img src={HomeImg1} alt="" />
-            <NavLink to={"/"}>Home</NavLink>
+          <div className="flex items-center navbar_links">
+            <NavLink className="text-[18px] flex gap-2 items-center" to={"/"}>
+              <FaHome size={25} />
+              Home
+            </NavLink>
           </div>
 
-          <div className="flex items-center gap-2">
-            <img src={HomeImg2} alt="" />
-            <NavLink to={"/movies"}>Movies</NavLink>
+          <div className=" navbar_links">
+            <NavLink
+              className="text-[18px] flex items-center gap-2"
+              to={"/movies"}
+            >
+            <BiSolidCameraMovie size={25} />
+              Movies
+            </NavLink>
           </div>
 
-          <div className="flex items-center gap-2">
-            <img src={HomeImg5} alt="" />
-            <NavLink to={"/saved"}>Saved</NavLink>
+          <div className=" navbar_links">
+            <NavLink className="text-[18px] flex items-center gap-2" to={"/saved"}>
+            <FaBookmark size={20} />
+              Saved
+            </NavLink>
           </div>
 
-          <div className="flex items-center gap-2">
-            <img src={HomeImg4} alt="" />
-            <NavLink to={"/search"}>Search</NavLink>
+          <div className=" navbar_links">
+            <NavLink className="text-[18px] flex items-center gap-2" to={"/search"}>
+            <IoSearch size={25} />
+              Search
+            </NavLink>
           </div>
         </div>
 

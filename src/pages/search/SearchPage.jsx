@@ -30,6 +30,7 @@ const SearchPage = () => {
           enterButton
           autoFocus
           defaultValue={query}
+          className="z-2"
         />
       </div>
       {!data?.total_results && <Empty />}
