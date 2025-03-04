@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useGetSingleMovieImagesQuery, useGetSingleMovieQuery, useGetSingleMovieSimilarQuery } from '../../redux/api/movie.api'
 import { useParams } from 'react-router-dom'
 import Movies from '../../components/MoviesCom'
+import { Spin } from "antd";
 
 const Detail = () => {
     const {id} = useParams()
@@ -17,7 +18,12 @@ const Detail = () => {
   return (
     <div className="container max-w-7xl mx-auto p-6">
       <div>
-        {isLoading && <div className="text-center text-3xl">Loading...</div>}
+        {isLoading && (
+          <div className="text-center text-3xl">
+            {" "}
+            <Spin size='large' />
+          </div>
+        )}
       </div>
 
       <div className="h-[600px] bg-gray-400 ">

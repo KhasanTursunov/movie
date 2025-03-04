@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   useGetGenresQuery,
   useGetMoviesQuery,
@@ -7,6 +7,8 @@ import MoviesCom from "../../components/MoviesCom.jsx";
 import { Pagination } from "antd";
 import { useSearchParams } from "react-router-dom";
 import { Empty } from "antd";
+import { Spin } from "antd";
+
 
 const Movies = () => {
   // const [page, setPage] = useState(1);
@@ -23,6 +25,10 @@ const Movies = () => {
   });
 
   const { data: genreData } = useGetGenresQuery({});
+
+  useEffect(() => {
+    window.scrollTo({ behavior: "smooth", left: 0, top: 0 });
+  }, [page]);
 
   console.log(genreData);
 
@@ -47,10 +53,15 @@ const Movies = () => {
     params.set("genres", id);
     setParams(params);
   };
+  
 // 
   return (
     <div>
-      {isLoading && <div className="text-center text-3xl">Loading...</div>}
+      {isLoading && (
+        <div className="text-center text-3xl">
+          <Spin size="large" />
+        </div>
+      )}
       <div className="flex gap-2 container max-w-7xl mx-auto overflow-auto pb-2 pt-2">
         {genreData?.genres?.map((genre) => (
           <div
@@ -67,7 +78,7 @@ const Movies = () => {
         ))}
       </div>
 
-      {/* {!data?.total_rusults && !isLoading && <Empty description={false} />} */}
+      {data?.total_results === 0 && !isLoading && <Empty description={false} />}
 
       <MoviesCom data={data} />
       <div className="flex my-5 justify-center">

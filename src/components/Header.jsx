@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FaRegSun, FaRegMoon } from "react-icons/fa";
+import { FaRegMoon } from "react-icons/fa";
 import LogoFull from "../assets/svg/logo_full.svg";
 import { Dropdown, Menu, Button } from "antd";
 import { GlobalOutlined } from "@ant-design/icons";
@@ -56,6 +56,7 @@ const Header = () => {
           className="hidden"
           checked={menuOpen}
           onChange={() => setMenuOpen(!menuOpen)}
+
         />
 
         <div
